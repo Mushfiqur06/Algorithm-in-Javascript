@@ -8,21 +8,29 @@
 
 // counter(0)
 
-const items = [[1, 2, 3], [4, 5, [6]]]
+// const items = [[1, 2, 3], [4, 5, [6]]]
 
-function findSiz(i) {
-    let hasSix = 'No'
-    i.forEach(a => {
-        if (a === 6) {
-            hasSix = 'Yes'
-        }
-        console.log(Array.isArray(a))
-        if (Array.isArray(a)) {
+// function findSiz(i) {
+//     let hasSix = 'No'
+//     i.forEach(a => {
+//         if (a === 6) {
+//             hasSix = 'Yes'
+//         }
+//         console.log(Array.isArray(a))
+//         if (Array.isArray(a)) {
 
-            hasSix = findSiz(a)
-        }
-    });
-    return hasSix;
+//             hasSix = findSiz(a)
+//         }
+//     });
+//     return hasSix;
+// }
+
+// console.log(findSiz(items))
+
+
+function sum(arr) {
+    if (arr.length === 0) return 0;
+    return arr[0] + sum(arr.slice(1))
 }
 
-console.log(findSiz(items))
+console.log(sum([1, 2, 3, 4, 7]))
